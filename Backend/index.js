@@ -8,11 +8,10 @@ import connectDB from './db/connection-mongoose.js';
 
 import Banner from './Models/banners.js'
 const app = express();
-<<<<<<< HEAD
-const port = process.env.PORT || 5500;
-=======
+
+
 const port = process.env.PORT || 4000;
->>>>>>> f7cb5718e35d352dd05ba90b82444da49b3ebd6a
+ 
 app.use(express.json()); 
 app.use(cors());
 // MySQL connection
