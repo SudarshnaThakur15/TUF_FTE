@@ -31,26 +31,24 @@ function Dashboard() {
         const hoursInSeconds = parseInt(formData.hours) * 3600;
         const minutesInSeconds = parseInt(formData.minutes) * 60;
         const totalSeconds = daysInSeconds + hoursInSeconds + minutesInSeconds + parseInt(formData.seconds);
-        const timerDate = new Date(Date.now() + totalSeconds * 1000).toISOString().slice(0, 19).replace('T', ' ');
-
-        const timer = timerDate;
+        
 
         const dataToSubmit = {
             title: formData.title,
             description: formData.description,
             link: formData.link,
             image_url: formData.image,
-            timer: timer,
+            timer: totalSeconds, 
             visibility: 1 // Assuming visibility is set to 1 by default
         };
 
         try {
-            const response = await axios.post('/api/banner/', dataToSubmit);
+            const response = await axios.post('api/banners', dataToSubmit);
             
             if (response.status === 200) {
-          alert('Banner created successfully!');
+          alert('Banner created successfully!'); 
           console.log(response)
-          localStorage.setItem('bannerId', response.data.id);
+          localStorage.setItem('id', response.data._id);
           setFormData({
               title: '',
               description: '',

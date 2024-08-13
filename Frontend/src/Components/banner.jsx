@@ -10,7 +10,7 @@ const Banner = ({ id }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`/api/banner/${id}`)
+        axios.get(`/api/banners/${id}`)
             .then(response => {
                 const data = response.data;
                 console.log(data)
@@ -39,7 +39,7 @@ const Banner = ({ id }) => {
     }, [countdown, timerFetched]);
 
     useEffect(() => {
-        axios.get(`/api/banner/${id}`)
+        axios.get(`/api/banners/${id}`)
             .then(response => {
                 const data = response.data;
                 setBannerData(data);
