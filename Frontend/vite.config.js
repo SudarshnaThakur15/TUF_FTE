@@ -8,7 +8,7 @@ export default defineConfig({
     proxy: {
       "/api": {
 
-        target: "https://tuf-fte-backend.onrender.com",
+        target: "https://tuf-os526pj7j-sudarshnas-projects.vercel.app",
 
        
         changeOrigin: true,
