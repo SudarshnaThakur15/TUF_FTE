@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://tuf-axy1nmlw7-sudarshnas-projects.vercel.app',
+        target: 'https://tuf-lagy9ozih-sudarshnas-projects.vercel.app',
         changeOrigin: true,
         secure: true,
         onError(err, req, res) {
