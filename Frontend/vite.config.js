@@ -6,14 +6,15 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": {
-
-        target: "https://tuf-os526pj7j-sudarshnas-projects.vercel.app",
-
-       
+      '/api': {
+        target: 'https://tuf-axy1nmlw7-sudarshnas-projects.vercel.app',
         changeOrigin: true,
-        secure: false,
+        secure: true,
+        onError(err, req, res) {
+          console.error('Proxy Error:', err);
+        },
       },
     },
   },
+  
 });
